@@ -16,7 +16,7 @@ public class EmployeeWage {
 
         System.out.println("Welcome to EmployeeWage Program");
 
-        while(totalHours<=100 || day<=WORKING_DAY_PER_MONTH) {
+        while((totalHours<=100) && (day<=WORKING_DAY_PER_MONTH)) {
 
             int attendance = (int)(Math.floor(Math.random()*10))%3;
             switch (attendance) {
