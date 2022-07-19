@@ -19,6 +19,10 @@ public class CompanyEmpWage {
         this.workHrPerMonth = workHrPerMonth;
     }
 
+    public void setTotalWage(int totalWage) {
+        this.totalWage = totalWage;
+    }
+
     @Override
     public String toString() {
         return "CompanyEmpWage{" +
