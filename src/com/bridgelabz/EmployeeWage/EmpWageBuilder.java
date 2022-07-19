@@ -1,24 +1,27 @@
 package com.bridgelabz.EmployeeWage;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EmpWageBuilder implements ICompanyWage{
    public final int IS_FULL_TIME = 1;
    public final int IS_PART_TIME = 2;
 
-
-   int noOfCompany = 0;
    ArrayList<CompanyEmpWage> companyEmpWageArrayList = new ArrayList<>();
+   Map<String,CompanyEmpWage> companyEmpWageMap = new HashMap<>();
+
 
   public  void addCompanyEmpWage(String company, int wagePerHr, int daysPerMonth, int workHrPerMonth){
        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company,wagePerHr,daysPerMonth,workHrPerMonth);
        companyEmpWageArrayList.add(companyEmpWage);
+       companyEmpWageMap.put(company,companyEmpWage);
    }
 
    public void calculateWage(){
        for (CompanyEmpWage companyEmpWage : companyEmpWageArrayList){
           companyEmpWage.setTotalWage(calculateWage(companyEmpWage));
            System.out.println(companyEmpWage);
+
        }
    }
 
@@ -29,6 +32,7 @@ public class EmpWageBuilder implements ICompanyWage{
         int totalHours=0;
         int dailyWage;
         int day=0;
+
 
         while((totalHours<companyEmpWage.workHrPerMonth) && (day<companyEmpWage.daysPerMonth)) {
 
