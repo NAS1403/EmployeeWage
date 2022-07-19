@@ -1,6 +1,6 @@
 package com.bridgelabz.EmployeeWage;
 
-public class EmpWageBuilder {
+public class EmpWageBuilder implements ICompanyWage{
    public final int IS_FULL_TIME = 1;
    public final int IS_PART_TIME = 2;
 
@@ -8,12 +8,12 @@ public class EmpWageBuilder {
    int noOfCompany = 0;
    CompanyEmpWage[] companyEmpWages = new CompanyEmpWage[5];
 
-   void addCompanyEmpWage(String company, int wagePerHr, int daysPerMonth, int workHrPerMonth){
+  public  void addCompanyEmpWage(String company, int wagePerHr, int daysPerMonth, int workHrPerMonth){
        companyEmpWages[noOfCompany] = new CompanyEmpWage(company,wagePerHr,daysPerMonth,workHrPerMonth);
        noOfCompany++;
    }
 
-   void calculateWage(){
+   public void calculateWage(){
        for(int i=0;i<noOfCompany;i++){
            calculateWage(companyEmpWages[i]);
        }
