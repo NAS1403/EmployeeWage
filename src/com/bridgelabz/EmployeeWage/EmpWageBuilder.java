@@ -3,11 +3,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EmpWageBuilder implements ICompanyWage{
+public class EmpWageBuilder implements CompanyWage{
    public final int IS_FULL_TIME = 1;
    public final int IS_PART_TIME = 2;
 
-   ArrayList<CompanyEmpWage> companyEmpWageArrayList = new ArrayList<>();
+
+    ArrayList<CompanyEmpWage> companyEmpWageArrayList = new ArrayList<>();
    Map<String,CompanyEmpWage> companyEmpWageMap = new HashMap<>();
 
 
@@ -23,6 +24,10 @@ public class EmpWageBuilder implements ICompanyWage{
            System.out.println(companyEmpWage);
 
        }
+   }
+
+  public int totalWageByCompany(String company){
+     return companyEmpWageMap.get(company).totalWage;
    }
 
 
@@ -53,9 +58,6 @@ public class EmpWageBuilder implements ICompanyWage{
             companyEmpWage.totalWage+=dailyWage;
             day++;
         }
-        System.out.println("Total work hours is : "+totalHours);
-        System.out.println("Total work days are: " +day);
-        System.out.println("Total employee wage for company "+companyEmpWage.company+" is "+companyEmpWage.totalWage);
         return companyEmpWage.totalWage;
     }
 
