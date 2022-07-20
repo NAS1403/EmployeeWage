@@ -5,5 +5,6 @@ public class EmployeeWage {
         empWageBuilder.addCompanyEmpWage("BEL",10,20,100);
         empWageBuilder.addCompanyEmpWage("SitusAMC",20,22,90);
         empWageBuilder.calculateWage();
+        System.out.println("Total employee wage for BEL is "+empWageBuilder.totalWageByCompany("BEL"));
     }
 }
