@@ -31,7 +31,7 @@ public class EmpWageBuilder implements CompanyWage{
    }
 
 
-    int calculateWage(CompanyEmpWage companyEmpWage){
+    public int calculateWage(CompanyEmpWage companyEmpWage){
 
         int empHrs;
         int totalHours=0;

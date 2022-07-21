@@ -3,6 +3,7 @@ package com.bridgelabz.EmployeeWage;
 interface CompanyWage{
     void addCompanyEmpWage(String company, int wagePerHr, int daysPerMonth, int workHrPerMonth);
     void calculateWage();
+    int calculateWage(CompanyEmpWage companyEmpWage);
     int totalWageByCompany(String company);
 }
 
